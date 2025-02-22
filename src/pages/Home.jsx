@@ -66,6 +66,8 @@
 
 import React from "react";
 import { SignedIn, SignedOut, UserButton, SignInButton, useUser } from "@clerk/clerk-react";
+import CodeEditor from "./codeeditor";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const { user } = useUser(); // Fetch the user details
@@ -122,9 +124,11 @@ export default function Home() {
   </p>
 
   <div className="mt-6 flex gap-6">
-    <button className="relative px-10 py-3 rounded-lg text-lg bg-green-600 hover:bg-green-700 transition-all duration-200 shadow-lg hover:shadow-green-100/10 transform hover:scale-110">
-      🚀 Let's Code
-    </button>
+  <Link to="/codeeditor">
+        <button className="relative px-10 py-3 rounded-lg text-lg bg-green-600 hover:bg-green-700 transition-all duration-200 shadow-lg hover:shadow-green-100/10 transform hover:scale-110">
+          🚀 Let's Code
+        </button>
+      </Link>
     <button className="relative px-13 py-3 rounded-lg text-lg bg-gray-700 hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-gray-100/10 transform hover:scale-110">
       🛠 Tools
     </button>

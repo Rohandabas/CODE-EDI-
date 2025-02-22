@@ -1,14 +1,15 @@
+
+
 // import React from "react";
-// import Navbar from "./components/Navbar";
-// import Home from "./pages/Home";  // Import Home component
+// // import Navbar from "./components/Navbar";
+// import Home from "./pages/Home";  
 
 // function App() {
 //   return (
 //     <>
-//       <Navbar />
-//       <main className="pt-16"> 
-//         <Home />  {/* Add Home component here */}
-//       </main>
+     
+//         <Home />
+      
 //     </>
 //   );
 // }
@@ -16,17 +17,18 @@
 // export default App;
 
 import React from "react";
-// import Navbar from "./components/Navbar";
-import Home from "./pages/Home";  
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import CodeEditor from "./pages/codeeditor";
 
 function App() {
   return (
-    <>
-      {/* <Navbar /> */}
-     
-        <Home />
-      {/* </main> */}
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/codeeditor" element={<CodeEditor />} />
+      </Routes>
+    </Router>
   );
 }
 
